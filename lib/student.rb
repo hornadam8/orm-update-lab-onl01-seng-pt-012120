@@ -5,7 +5,7 @@ class Student
   attr_accessor :name,:grade
   attr_reader :id
   
-  def intitialize(id=nil, name, grade)
+  def initialize(id=nil, name, grade)
     @id = id
     @name = name
     @grade = grade
@@ -62,7 +62,7 @@ class Student
     DB[:conn].execute(sql,name).map{|row| Student.new_from_db(row)}.first
   end
   
-  def update
+  def update(name,grade)
     sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
     DB[:conn].execute(sql, self.name, self.grade, self.id)
   end
