@@ -42,9 +42,8 @@ class Student
     end
   end
   
-  def create(name,grade)
-    s = student.new(name,grade)
-    s.save
+  def create(name="",grade="")
+    student.new(name,grade).save
   end
   
   def new_from_db(array)
