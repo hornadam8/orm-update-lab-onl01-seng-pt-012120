@@ -59,7 +59,11 @@ class Student
     SELECT * FROM STUDENTS
     WHERE name = ?
     SQL
-    DB[:conn].execute(sql,name)
+    DB[:conn].execute(sql,name).map{|row| Student.new_from_db(row)}.first
+  end
+  
+  def update
+    
   end
   
 end
