@@ -47,6 +47,6 @@ class Student
   end
   
   def new_from_db(array)
-     
+    
   end
 end
